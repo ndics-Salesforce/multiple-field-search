@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="取引先検索" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <lightning-layout vertical-align="end" class="slds-var-m-bottom_small">
+                
+                <lightning-layout-item class="slds-p-around_x-small" flexibility="grow">
+                    <lightning-input class = "accountName" type="search" onchange={handleNameChange} label="取引先名" value={searchName}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item flexibility="grow" class="slds-p-around_x-small">
+                    <lightning-input type="search" onchange={handleTypeChange} label="種別" value={searchType}></lightning-input>
+                </lightning-layout-item>
+                
+                <lightning-layout-item flexibility="grow" class="slds-p-around_x-small">
+                    <lightning-input type="search" onchange={handleIndustryChange} label="業種" value={searchIndustry}></lightning-input>
+                </lightning-layout-item>
+                
+                <lightning-layout-item class="slds-p-around_x-small">
+                    <lightning-button label="検索" onclick={handleSearch}></lightning-button>
+                </lightning-layout-item>
+          
+
+            </lightning-layout>
+            
+            <div class="slds-m-around_medium">
+
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="account">
+                    <div class="slds-p-around_medium lgc-bg" key={account.Id}>
+                        <lightning-tile label={account.Name} type="media">
+                            <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                            <ul class="slds-list_horizontal slds-has-dividers_right">
+                                <li class="slds-item">種別：{account.Type}</li>
+                                <li class="slds-item">業種：{account.Industry}</li>
+                            </ul>
+                        </lightning-tile>
+                    </div>
+                </template>
+            </template>
+            </div>            
+
+        </div>
+        
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+
+    </lightning-card>
+</template>
