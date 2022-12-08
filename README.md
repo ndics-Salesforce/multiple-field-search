@@ -1,18 +1,12 @@
-# Salesforce DX Project: Next Steps
+# コンポーネントの説明
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+- <b>複数項目(取引先名・業種・種別)から取引先を検索するコンポーネントです。</b><br>
+- 3つの項目のうち、どれか1項目でも当てはまると検索結果に表示されます。（OR検索）<br>
+- ある項目を空欄にして検索すると、その項目は検索対象にはなりません。
+## 参考画像
 
-## How Do You Plan to Deploy Your Changes?
+![image](https://user-images.githubusercontent.com/119906161/206394027-6a5b9484-a40b-4027-a137-9137bee2e965.png)
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## 参考にしたコンポーネント
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- [LWC RecipesのapexImperativeMethodWithParamsコンポーネント](https://github.com/trailheadapps/lwc-recipes/tree/main/force-app/main/default/lwc/apexImperativeMethodWithParams)
