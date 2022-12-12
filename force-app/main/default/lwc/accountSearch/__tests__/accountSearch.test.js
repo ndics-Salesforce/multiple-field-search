@@ -124,6 +124,43 @@ describe('c-account-search', () => {
         expect(errorPanelEl).not.toBeNull();
     });
 
- 
+
+ // toBeAccessible() is not function エラー
+    // データが返されたときにアクセス可能
+    // it('is accessible when data is returned', async () => {
+
+    //     findAccounts.mockResolvedValue(APEX_ACCOUNT_SUCCESS);
+        
+    //     const element = createElement('c-apex-account-search', {
+    //         is: AccountSearch
+    //     });
+    //     document.body.appendChild(element);
+
+    //     const buttonEl = element.shadowRoot.querySelector('lightning-button');
+    //     buttonEl.click();
+
+    //     await flushPromises();
+
+    //     await expect(element).toBeAccessible();
+    // });
+
+    // // エラーが返されたときにアクセス可能
+    // it('is accessible when error is  returned', async () => {
+         
+    //     findAccounts.mockRejectedValue(APEX_ACCOUNT_ERROR);
+
+    //     const element = createElement('c-apex-account-search', {
+    //         is: AccountSearch
+    //     });
+    //     document.body.appendChild(element);
+
+    //     const buttonEl = element.shadowRoot.querySelector('lightning-button');
+    //     buttonEl.click();
+
+    //     await flushPromises();
+
+    //     await expect(element).toBeAccessible();
+    // });
+
 
 });

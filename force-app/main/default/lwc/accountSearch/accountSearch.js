@@ -1,7 +1,8 @@
 import { LightningElement } from 'lwc';
+import { NavigationMixin } from 'lightning/navigation';
 import findAccounts from '@salesforce/apex/AccountController.findAccounts';
 
-export default class ApexImperativeMethodWithParams extends LightningElement {
+export default class accountSearch extends NavigationMixin(LightningElement) {
     searchName = '';
     searchType = '';
     searchIndustry = '';
@@ -28,5 +29,16 @@ export default class ApexImperativeMethodWithParams extends LightningElement {
                 this.error = error;
                 this.accounts = undefined;
             });
+    }
+
+    handleClick(event){
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+              recordId: event.target.value,
+              objectApiName: 'Account',
+              actionName: 'view'
+            }
+          });
     }
 }

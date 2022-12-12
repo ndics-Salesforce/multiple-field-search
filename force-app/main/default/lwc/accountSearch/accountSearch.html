@@ -1,6 +1,8 @@
 <template>
     <lightning-card title="取引先検索" icon-name="custom:custom63">
         <div class="slds-var-m-around_medium">
+
+            <!-- 検索欄 -->
             <lightning-layout vertical-align="end" class="slds-var-m-bottom_small">
                 
                 <lightning-layout-item class="slds-p-around_x-small" flexibility="grow">
@@ -19,24 +21,34 @@
                     <lightning-button label="検索" onclick={handleSearch}></lightning-button>
                 </lightning-layout-item>
           
-
             </lightning-layout>
             
+            <!-- 検索結果 -->
             <div class="slds-m-around_medium">
 
             <template if:true={accounts}>
                 <template for:each={accounts} for:item="account">
-                    <div class="slds-p-around_medium lgc-bg" key={account.Id}>
-                        <lightning-tile label={account.Name} type="media">
+                    
+                        <lightning-tile class="slds-p-around_medium" key={account.Id} label={account.Name} type="media">
+
                             <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
-                            <ul class="slds-list_horizontal slds-has-dividers_right">
+                      
+                            <!-- レコードページへの遷移ボタン -->
+                            <div class="slds-float_right">
+                                <lightning-button-icon  value={account.Id} icon-name="utility:search" variant="border-filled" alternative-text="詳細" onclick={handleClick}></lightning-button-icon>
+                            </div>
+                            
+                            <ul class="slds-list_dotted">
                                 <li class="slds-item">種別：{account.Type}</li>
                                 <li class="slds-item">業種：{account.Industry}</li>
                             </ul>
+                            
                         </lightning-tile>
-                    </div>
+                    
                 </template>
             </template>
+
+
             </div>            
 
         </div>
