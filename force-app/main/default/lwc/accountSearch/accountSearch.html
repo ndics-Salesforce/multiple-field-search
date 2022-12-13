@@ -6,15 +6,15 @@
             <lightning-layout vertical-align="end" class="slds-var-m-bottom_small">
                 
                 <lightning-layout-item class="slds-p-around_x-small" flexibility="grow">
-                    <lightning-input class = "accountName" type="search" onchange={handleNameChange} label="取引先名" value={searchName}></lightning-input>
+                    <lightning-input class="name" type="search" onchange={handleNameChange} label="取引先名" value={searchName}></lightning-input>
                 </lightning-layout-item>
 
                 <lightning-layout-item flexibility="grow" class="slds-p-around_x-small">
-                    <lightning-input type="search" onchange={handleTypeChange} label="種別" value={searchType}></lightning-input>
+                    <lightning-input class="type" type="search" onchange={handleTypeChange} label="種別" value={searchType}></lightning-input>
                 </lightning-layout-item>
                 
                 <lightning-layout-item flexibility="grow" class="slds-p-around_x-small">
-                    <lightning-input type="search" onchange={handleIndustryChange} label="業種" value={searchIndustry}></lightning-input>
+                    <lightning-input class="industry" type="search" onchange={handleIndustryChange} label="業種" value={searchIndustry}></lightning-input>
                 </lightning-layout-item>
                 
                 <lightning-layout-item class="slds-p-around_x-small">
@@ -39,8 +39,8 @@
                             </div>
                             
                             <ul class="slds-list_dotted">
-                                <li class="slds-item">種別：{account.Type}</li>
-                                <li class="slds-item">業種：{account.Industry}</li>
+                                <li class="slds-item type">種別：{account.Type}</li>
+                                <li class="slds-item industry">業種：{account.Industry}</li>
                             </ul>
                             
                         </lightning-tile>
